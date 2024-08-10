@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        label 'maven'
+    }
+    tools {
+        maven 'Maven-On-ServerA'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    }
+}
